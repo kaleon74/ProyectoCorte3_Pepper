@@ -63,3 +63,5 @@ pip install flask requests
 * Temperatura 0.85 para balance creatividad/precisión
 *Respuestas de ~700 palabras
 * Contexto de marca integrado
+
+# 🤖 SE PARTE DEL FUTURO E INTERACTUA CON PEPPER Y AK WATCH 🦝
