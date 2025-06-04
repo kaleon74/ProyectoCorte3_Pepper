@@ -9,12 +9,26 @@ Sistema de chatbot inteligente implementado en el robot Pepper para consultas pe
 * **Dominio Especializado:** Optimizado para relojería, joyería y audífonos
 
 > ## 🏗️ Arquitectura del Sistema
-
-┌─────────────┐    HTTP     ┌─────────────┐    API     ┌─────────────┐
-│   Pepper    │ ◄────────► │   Flask     │ ◄───────► │  Deepseek   │
-│   Robot     │             │   Server    │            │     AI      │
-└─────────────┘             └─────────────┘            └─────────────┘
-### Componentes
+flowchart LR
+    A[🤖 Pepper Robot<br/>NAOqi + Python] 
+    B[🖥️ Flask Server<br/>REST API]
+    C[🧠 Deepseek AI<br/>LLM API]
+    
+    A ---|HTTP Requests| B
+    B ---|API Calls| C
+    C ---|AI Response| B
+    B ---|Processed Data| A
+    
+    subgraph "Local Network"
+        A
+        B
+    end
+    
+    subgraph "External API"
+        C
+    end
+    
+> ## Componentes
 
 * **pricesmap5.py:** Cliente Pepper con reconocimiento de voz y síntesis de habla
 * **serverdef4.py:** Servidor Flask para gestión de conversaciones y API
